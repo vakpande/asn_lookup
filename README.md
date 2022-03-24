@@ -5,6 +5,8 @@
 
 The client implements a simple python module to search for an IP in the config file and returns the ASN and the networks the IP is within. It check if the IP is part of multiple ranges and then returns the result in most specific to least spefic order.
 
+## Supported version:
+- IPv4
 
 **Design Pattern**
 ==================
@@ -30,6 +32,7 @@ IP address consists of 2 portions Network bits and Host bits, In order for us to
 The code consist of modules for different tasks and a unit testing module which verifies each definition to make sure those definitions returns the value as expected.
 To make code look clean, there is a definitions module to pass the fix values such as env variable name and URL for config file.
 
+```
 asn_lookup
   |
   asn/
@@ -42,6 +45,7 @@ asn_lookup
     test_validate --> unit test validate to verify the validate function.
   definitions --> holds constant definitions
   lookup_addr.py --> holds the logic to validate the argument, parse the config file and print the result.
+  ```
 
 
 
