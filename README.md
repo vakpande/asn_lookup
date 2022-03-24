@@ -1,7 +1,7 @@
 **ASN lookup utility**
 ======================
 
-# asn_lookup
+## asn_lookup
 
 The client implements a simple python module to search for an IP in the config file and returns the ASN and the networks the IP is within. It check if the IP is part of multiple ranges and then returns the result in most specific to least spefic order.
 
@@ -16,7 +16,7 @@ There are mainly 4 portions of the design.
 - Parses the data and finds CIDRs where the IP address falls in range and appends the CIDR and ASN to final result.
 - Returns the result sorted based on most specific to least.
 
-# Logic to find the IP address in CIDR.
+## Logic to find the IP address in CIDR.
 
 IP address consists of 2 portions Network bits and Host bits, In order for us to check if any IP address is part of the CIDR we can follow the steps listed below to find the Network bits for CIDR and the IP address. once we have that information, we can compare both the network bits and if both same, we found the IP in CIDR.
 
@@ -25,7 +25,7 @@ IP address consists of 2 portions Network bits and Host bits, In order for us to
 - Compare both to find if the IP is in CIDR range.
 
 
-# Code layout
+## Code layout
 
 The code consist of modules for different tasks and a unit testing module which verifies each defition to make sure those definitions returns the value as expected.
 To make code look clean, there is a definitions module to pass the fix values such as env variable name and URL for config file.
@@ -70,7 +70,7 @@ optional arguments:
 **Code Metrics**
 ================
 
-# Test Coverage
+## Test Coverage
 
 ```
 python -m unittest discover
@@ -82,7 +82,7 @@ OK
 ```
 
 
-# Execution Time
+## Execution Time
 
 ```
 ./lookup_addr.py 8.8.8.8   
