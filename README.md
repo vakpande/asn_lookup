@@ -18,7 +18,7 @@ There are mainly 4 portions of the design.
 
 ## Logic to find the IP address in CIDR.
 
-IP address consists of 2 portions Network bits and Host bits, In order for us to check if any IP address is part of the CIDR we can follow the steps listed below to find the Network bits for CIDR and the IP address. once we have that information, we can compare both the network bits and if both same, we found the IP in CIDR.
+IP address consists of 2 portions Network bits and Host bits, In order for us to check if any IP address is part of the CIDR we can follow the steps listed below to find the Network bits for CIDR and the IP address. once we have that information, we can compare both the network bits and if both are same, we found the IP in CIDR.
 
 - Convert the IP address to binary.
 - Get Network bits for IP and CIDR.
@@ -27,8 +27,22 @@ IP address consists of 2 portions Network bits and Host bits, In order for us to
 
 ## Code layout
 
-The code consist of modules for different tasks and a unit testing module which verifies each defition to make sure those definitions returns the value as expected.
+The code consist of modules for different tasks and a unit testing module which verifies each definition to make sure those definitions returns the value as expected.
 To make code look clean, there is a definitions module to pass the fix values such as env variable name and URL for config file.
+
+asn_lookup
+  |
+  asn/
+    |
+    lookup module --> converts IP to binary, gets the network bits, compares both network bits
+    validate module --> validates IPv4 address
+  test/
+    |
+    test_lookup --> unit test module to verify the lookup module functions
+    test_validate --> unit test validate to verify the validate function.
+  definitions --> holds constant definitions
+  lookup_addr.py --> holds the logic to validate the argument, parse the config file and print the result.
+
 
 
 **Usage**
@@ -102,5 +116,6 @@ Total time taken: --- 18.3473639488 seconds ---
 Total time taken: --- 18.331496954 seconds ---
 ```
 
-**Average time taken: 21 Seconds** 
+**Average time taken: 21 Seconds**  
+> not the best way to calculate the excuetion time as there are lot of variables involved and this can vary on different systems.
 
