@@ -7,6 +7,7 @@ The client implements a simple python module to search for an IP in the config f
 
 ## Supported version:
 - IPv4
+- IPv6
 
 **Design Pattern**
 ==================

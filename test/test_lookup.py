@@ -17,6 +17,8 @@ class TestLookUp(unittest.TestCase):
         """
         self.assertEqual(self.lookup.ip_to_binary("0.0.0.0"),"00000000000000000000000000000000")
         self.assertEqual(self.lookup.ip_to_binary("255.255.255.255"),"11111111111111111111111111111111")
+        self.assertEqual(self.lookup.ip_to_binary("2602:fc0d:0000:0000:0000:0000:0000:0000"),"100110000000101111110000001101000000000000000000000000000000000000000000000000")
+        self.assertEqual(self.lookup.ip_to_binary("::"),"0000000000000000000000000000000000000000000000000000000000000000" )
     
     def test_get_addr_network(self):
         """
